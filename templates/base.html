@@ -10,10 +10,10 @@
     </head>
     <body>
         {% include "navbar.html" %}
+        {% block content %}
+        {% endblock %}
         <script src="{% static 'bootstrap.min.js' %}"></script>
         {% block script %}
-        {% endblock %}
-        {% block content %}
         {% endblock %}
     </body>
 </html>
