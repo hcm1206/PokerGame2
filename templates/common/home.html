@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-3">
+    <div class="container-lg">
+        <h1>PokerGame Homepage</h1>
+    </div>
+    <div class="card my-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Forum</h5>
+          <p class="card-text">다른 사람들과 자유롭게 대화하는 자유게시판입니다.</p>
+          <a href="{% url 'pybo:index' %}" class="card-link">link</a>
+        </div>
+      </div>
+      <div class="card my-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">PokerGame</h5>
+          <p class="card-text">텍사스 홀덤 룰로 다른 사람과 포커 게임을 즐길 수 있습니다.</p>
+          <a href="{% url 'pokergame:index' %}" class="card-link">link</a>
+        </div>
+      </div>
+</div>
+{% endblock %}
