@@ -3,7 +3,7 @@
 <div class="container my-3">
     <div class="row my-3">
         <div class="col-6">
-            <a href="#" class="btn btn-primary">게임 생성하기</a>
+            <a href="{% url 'pokergame:session_create' %}" class="btn btn-primary">게임 생성하기</a>
         </div>
         <!-- <div class="col-6">
             <div class="input-group">
@@ -17,7 +17,7 @@
     <div class="list-group">
         {% if game_session_list %}
         {% for game_session in game_session_list %}
-        <a href="#" class="list-group-item list-group-item-action">{{ game_session.game_name }}</a>
+        <a href="{% url 'pokergame:session_enter' game_session.id %}" class="list-group-item list-group-item-action">{{ game_session.game_name }}</a>
         {% endfor %}
         {% else %}
         <a class="list-group-item list-group-item-action disabled" aria-disabled="true">게임 세션이 없습니다.</a>
