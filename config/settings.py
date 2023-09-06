@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
+    'channels',
     'common.apps.CommonConfig',
     'pybo.apps.PyboConfig',
     'pokergame.apps.PokergameConfig',
@@ -41,6 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+# mysite/settings.py
+# Daphne
+ASGI_APPLICATION = "config.asgi.application"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

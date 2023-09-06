@@ -11,6 +11,23 @@
 {% endblock %}
 {% block script %}
 <script type='text/javascript'>
+const gameSessionId = '{{ game_session.id }}';
+const socket = new WebSocket(`ws://${window.location.host}/ws/pokergame/game/session/${gameSessionId}/`);
+
+socket.onmessage = function(e) {
+    const data = JSON.parse(e.data);
+    document.querySelector('#chat-log').value += (data.message + '\n');
+};
+
+socket.onopen = function(e) {
+    console.log('socket open success');
+}
+
+socket.onclose = function(e) {
+    console.error('socket closed unexpectedly');
+};
+
+
 const delete_elements = document.getElementsByClassName("delete");
 Array.from(delete_elements).forEach((element) => {
     element.addEventListener('click', () => {
